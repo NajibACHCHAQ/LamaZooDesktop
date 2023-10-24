@@ -1,0 +1,34 @@
+<!-- dashboard.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Tableau de bord de soins Animalier</h1>
+  
+  <!-- Un élément pour afficher les données de l'API -->
+  <div id="api-data"></div>
+
+  <script>
+    // Importez la bibliothèque axios
+    const axios = require('axios');
+
+    // Lorsque la page est chargée, effectuez une requête GET à votre API
+    window.onload = function () {
+      axios.get('http://localhost:3000/api/data') // Remplacez l'URL par l'URL de votre API
+        .then(response => {
+          // Gérez les données de la réponse ici
+          const apiData = response.data;
+
+          // Affichez les données de l'API sur la page
+          document.getElementById('api-data').innerHTML = JSON.stringify(apiData, null, 2);
+        })
+        .catch(error => {
+          // Gérez les erreurs ici
+          console.error(error);
+        });
+    };
+  </script>
+</body>
+</html>

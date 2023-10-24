@@ -1,0 +1,15 @@
+{
+  "name": "lamazoodesktop",
+  "version": "1.0.0",
+  "description": "Vue pour saisie et consultation des soins par les véterinaires du lamazoo",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "najib",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs": "^3.1.9",
+    "electron": "^27.0.2"
+  }
+}
